@@ -60,5 +60,8 @@ File CSV (`donasi.csv`) digunakan untuk menyimpan data barang dengan struktur be
 - **Kondisi Barang**: Kondisi barang (Baru, Bekas, Layak Pakai).
 - **Lokasi Penyimpanan**: Lokasi penyimpanan barang (Gudang A, Gudang B).
 - **Nama Donatur**: Nama pemberi donasi.
-- **Status Distribusi**: Status distribusi barang (Tersedia, Disalurkan).
+- **Status Distribusi**: Status distribusi barang (Tersedia, Disalurkan)
 
+.
+
+![Flowchart](https://github.com/user-attachments/assets/01fdf32f-a368-40ed-b86e-45713f22d3dc)
