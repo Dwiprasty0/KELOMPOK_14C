@@ -65,3 +65,7 @@ File CSV (`donasi.csv`) digunakan untuk menyimpan data barang dengan struktur be
 .
 
 ![Flowchart](https://github.com/user-attachments/assets/01fdf32f-a368-40ed-b86e-45713f22d3dc)
+
+
+
+<img width="683" alt="site map" src="https://github.com/user-attachments/assets/9e5e8eb1-08d4-4289-82e4-74ecf8842dba">
