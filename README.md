@@ -29,16 +29,17 @@ Program ini adalah aplikasi berbasis GUI (Graphical User Interface) yang digunak
 - **Bahasa Pemrograman**: Python
 - **Perpustakaan**:
   - `tkinter`: Untuk membangun antarmuka pengguna.
-  - `csv`: Untuk membaca dan menulis data ke file CSV.
+  - `pillow`: Untuk mengimport gambar.
   - `os`: Untuk mengecek keberadaan file CSV.
 
 ---
 
 ## Panduan Penggunaan
+### **1. Halaman Utama**
+-Berisi 3 Menu yang Dapat Dipilih (Input Data, Lihat Data, Edit Data)
 ### **1. Input Data**
 - Pilih kategori barang dari dropdown.
-- Masukkan informasi barang seperti jenis barang, kondisi, lokasi penyimpanan, dan nama donatur.
-- Pilih status distribusi awal barang.
+- Masukkan informasi barang seperti jenis barang, kondisi, lokasi penyimpanan, nama donatur, dan status distribusi.
 - Klik tombol **Tambah Barang** untuk menyimpan data.
 
 ### **2. Lihat Data**
@@ -47,8 +48,9 @@ Program ini adalah aplikasi berbasis GUI (Graphical User Interface) yang digunak
 
 ### **3. Edit Data**
 - Masukkan ID barang yang ingin diubah.
-- Pilih status distribusi baru.
-- Klik tombol **Edit Data** untuk memperbarui status.
+- Pilih kategori yang akan diedit
+- Masukkan Nilai Baru Sesuai Kategori yang Dipilih
+- Klik tombol **Update Data** untuk menginput data baru yang telah dimasukkan sebelumnya
 
 ---
 
