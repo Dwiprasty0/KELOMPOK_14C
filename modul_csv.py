@@ -45,7 +45,6 @@ def view_data(selected_kategori):
     return data
 
 
-# Fungsi untuk memperbarui data di file CSV
 def edit_data(item_id, selected_field, new_value):
     updated = False
     data = []
@@ -60,7 +59,7 @@ def edit_data(item_id, selected_field, new_value):
 
     if updated:
         with open(CSV_FILE, mode="w", newline="") as file:
-            writer = csv.DictWriter(file, fieldnames=["ID", "Kategori", "Jenis Barang", "Kondisi Barang", "Lokasi Penyimpanan", "Nama Donatur", "Status Distribusi"])
+            writer = csv.DictWriter(file, fieldnames=["ID", "Kategori", "Jenis Barang", "Kondisi Barang", "Lokasi Penyimpanan", "Tanggal Masuk", "Jumlah", "Satuan", "Nama Donatur", "Status Distribusi"])
             writer.writeheader()
             writer.writerows(data)
     return updated

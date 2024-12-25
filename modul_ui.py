@@ -52,7 +52,7 @@ def add_data_ui(kategori_var, jenis_barang_entry, kondisi_barang_var, lokasi_pen
     jenis_barang_entry.delete(0, tk.END)
     kondisi_barang_var.set("")
     lokasi_penyimpanan_var.set("")
-    tanggal_masuk_var.set("")
+    tanggal_masuk_var.set("dd/mm/yyyy")
     jumlah_var.set("")
     satuan_var.set("")
     nama_donatur_entry.delete(0, tk.END)
@@ -86,19 +86,27 @@ def edit_data_ui(edit_id_entry, edit_field_var, edit_value_var):
         messagebox.showinfo("Sukses", "Data berhasil diperbarui!")
     else:
         messagebox.showwarning("Error", "ID Barang tidak ditemukan!")
-# Fungsi untuk memperbarui data barang
-def edit_data_ui(edit_id_entry, edit_field_var, edit_value_var):
-    item_id = edit_id_entry.get()
-    selected_field = edit_field_var.get()
-    new_value = edit_value_var.get()
 
-    if not new_value:
-        messagebox.showerror("Input Error", "Harap masukkan nilai baru.")
+# Fungsi untuk menangani "Edit Data" dari tabel
+def edit_data_from_view(tree, root, edit_frame, edit_id_entry, field_combo, edit_value_var):
+    # Ambil item yang dipilih
+    selected_item = tree.selection()
+    if not selected_item:
+        messagebox.showwarning("Peringatan", "Pilih item yang ingin diedit.")
         return
 
-    updated = csv_mod.edit_data(item_id, selected_field, new_value)
+    # Ambil data dari item yang dipilih
+    item_data = tree.item(selected_item)["values"]
+    if not item_data:
+        messagebox.showwarning("Peringatan", "Data tidak valid.")
+        return
 
-    if updated:
-        messagebox.showinfo("Sukses", "Data berhasil diperbarui!")
-    else:
-        messagebox.showwarning("Error", "ID Barang tidak ditemukan!")
+    # Muat data ke dalam form edit
+    edit_id_entry.delete(0, tk.END)
+    edit_id_entry.insert(0, item_data[0])  # ID barang
+    field_combo.set("")  # Kosongkan field yang akan diedit
+    edit_value_var.set("")  # Kosongkan nilai baru
+
+    # Pindah ke halaman edit
+    show_page(root, edit_frame, [root.children[frame] for frame in root.children if isinstance(root.children[frame], tk.Frame)])
+
